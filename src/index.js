@@ -3,10 +3,10 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = process.env.PORT;
-const user = require("./Models/userSchema");
+const user = require("../Models/userSchema");
 const bcrypt=require("bcrypt")
 
-const userRouter = require("./Routes/userRoutes");
+const userRouter = require("../Routes/userRoutes");
 
 mongoose.connect(process.env.MONGO_URL).then(async () => {
   console.log("database connected");
@@ -22,10 +22,10 @@ mongoose.connect(process.env.MONGO_URL).then(async () => {
   }
 });
 
-const ErrorHandler = require("./Middlewares/ErrorHandler");
-const commonRouter = require("./Routes/commonRoutes");
-const authRoute = require("./Routes/authRoute");
-const adminRoute = require("./Routes/adminRoutes");
+const ErrorHandler = require("../Middlewares/ErrorHandler");
+const commonRouter = require("../Routes/commonRoutes");
+const authRoute = require("../Routes/authRoute");
+const adminRoute = require("../Routes/adminRoutes");
 
 
 const app = express();
